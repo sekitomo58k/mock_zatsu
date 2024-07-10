@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MamaWell ダッシュボード</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>MamaWell ダッシュボード</h1>
+        <nav>
+            <button id="logoutBtn">ログアウト</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="userSelect">
+            <h2>担当ユーザー選択</h2>
+            <select id="userDropdown">
+                <option value="">ユーザーを選択してください</option>
+                <!-- ここにユーザーリストが動的に追加されます -->
+            </select>
+        </section>
+
+        <section id="dashboard" class="hidden">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>心拍数</h3>
+                    <canvas id="heartRateChart"></canvas>
+                </div>
+                <div class="grid-item">
+                    <h3>活動時間</h3>
+                    <canvas id="activityChart"></canvas>
+                </div>
+                <div class="grid-item">
+                    <h3>睡眠時間</h3>
+                    <canvas id="sleepChart"></canvas>
+                </div>
+                <div class="grid-item">
+                    <h3>歩数</h3>
+                    <canvas id="stepsChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>最終更新: <span id="lastUpdated"></span></p>
+        <p>データソース: Fitbit</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
